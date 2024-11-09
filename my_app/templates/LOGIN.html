@@ -1,0 +1,32 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login form</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"  />
+</head>
+<body>
+    <div class="container">
+        <h2>EduSeva</h2>
+        <form action="{% url 'login' %}" method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+            <input type="text" name="username" required>
+            <label name="username" for="" >Username</label> 
+            <i class="fa-solid fa-envelope"></i>  
+            </div>
+            <div class="form-group">
+                <input type="password" name="pass1" required >
+                <label name="pass1" for="" >Password</label>  
+                <i class="fa-solid fa-lock"></i> 
+                </div>
+                <p><a href="#"> Forget Password?</a></p>
+                <button type="submit" id="btn">Login</button>
+        </form>
+    </div>
+    
+</body>
+</html>
